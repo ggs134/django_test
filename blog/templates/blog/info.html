@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% for info in infos%}
+    <div class="post">
+        <h1>{{ info.text|linebreaks }}</h1>
+    </div>
+    {% endfor %}
+{% endblock %}

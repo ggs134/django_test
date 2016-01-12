@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+import keyUtils
 
 
 class Post(models.Model):
@@ -17,3 +18,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Info(models.Model):
+    text = models.TextField()
+
+class BitcoinAddress(models.Model):
+    id = models.AutoField(primary_key=True)
+    address = models.CharField(max_length=500, default="test address")
+    priv_key = models.CharField(max_length=500, default="test private key")
+    priv_wif = models.CharField(max_length=500, default="test wif private key")
